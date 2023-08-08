@@ -1,7 +1,14 @@
 import "leaflet/dist/leaflet.css";
 import style from "../../styles/Home.module.css";
 
-import { MapContainer, TileLayer, Marker, ShapeFile } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  ShapeFile,
+  GeoJSON,
+} from "react-leaflet";
+import estados from "../shapefiles/estados.js";
 
 function Map() {
   return (
@@ -16,6 +23,7 @@ function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[19.438898, -99.18014]}></Marker>
+      <GeoJSON data={estados} />
     </MapContainer>
   );
 }
